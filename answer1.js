@@ -1,12 +1,13 @@
-const CORS_URL = "https://noroffcors.herokuapp.com/";
-const API_URL = "https://elephant-api.herokuapp.com/elephants";
+const API_URL = "https://mashape-community-urban-dictionary.p.rapidapi.com/define?term=wat";
 
-const URL = CORS_URL + API_URL;
+const options = { "headers": {
+    "x-rapidapi-key": "f1f6bf4f35msh6bce51834ab65fep1142d8jsne932f1fff042",
+}};
 
-async function getElephants() {
-  const response = await fetch(URL);
+async function callUrbanDictionary() {
+  const response = await fetch(API_URL, options);
   const results = await response.json();
   console.log(results);
 }
 
-getElephants();
+callUrbanDictionary();
